@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WidgetManager-client"
+    }
+  },
+  "defaultProject": "WidgetManager-client",
+  "cli": {
+    "analytics": "ee3325cd-f6a8-4c8f-927e-549554ec9256"
+  }
 }
