@@ -28,7 +28,10 @@ export class UserService {
   }
 
   getAdmin(): Observable<any> {
-    return this.http.get(API_URLs + 'admin', { responseType: 'text' });
+    const httpOptions2 = {
+      headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
+    };
+    return this.http.get(API_URLs + 'admin', httpOptions2);
   }
 
   getUser(id: number): Observable<any> {
@@ -46,14 +49,14 @@ export class UserService {
     const httpOptions2 = {
       headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
     };
-    return this.http.put(`${this.API_URL}/${id}`, httpOptions2);
+    return this.http.put(`${this.API_URL}${id}`, httpOptions2);
   }
 
   deleteUser(id: number): Observable<any> {
     const httpOptions2 = {
       headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
     };
-    return this.http.delete(`${this.API_URL}/${id}`, httpOptions2);
+    return this.http.delete(`${this.API_URL}${id}`, httpOptions2);
   }
 
   getUserList(): Observable<any> {
