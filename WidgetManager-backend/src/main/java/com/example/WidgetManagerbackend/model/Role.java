@@ -24,6 +24,6 @@ public class Role {
     }
 
     public enum RoleName{
-        USER, ADMIN, AUTHOR
+        ROLE_USER, ROLE_ADMIN, ROLE_AUTHOR
     }
 }
