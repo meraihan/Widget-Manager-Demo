@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   users: Observable<User[]>;
+  newUser: User = new User();
+  updateUser: User = new User();
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -38,5 +40,12 @@ export class AdminComponent implements OnInit {
   goToDetail(id: number): void {
     this.router.navigate(['detail'], { queryParams: { id } });
   }
-
+  addUser(): void {
+    this.userService.createUser(this.newUser).subscribe(
+      res => this.reloadData()
+    );
+  }
+  update(): void {
+    this.userService.createUser(this.updateUser);
+  }
 }

@@ -34,9 +34,9 @@ public class UserController {
         return ResponseEntity.ok().body(user);
     }
 
-    @PostMapping("/publicWdgt")
+    @PostMapping("/publicWdgt/")
     public User createUser(@Valid @RequestBody User user) {
-        return userRepository.save(user);
+        return userRepository.saveAndFlush(user);
     }
 
     @PutMapping("/publicWdgt/{id}")
@@ -49,7 +49,7 @@ public class UserController {
         user.setEmail(userDetails.getEmail());
         user.setPassword(userDetails.getPassword());
         user.setRoles(userDetails.getRoles());
-        final User updatedUser = userRepository.save(user);
+        final User updatedUser = userRepository.saveAndFlush(user);
         return ResponseEntity.ok(updatedUser);
     }
 

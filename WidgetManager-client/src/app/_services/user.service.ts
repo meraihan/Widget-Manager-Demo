@@ -42,7 +42,10 @@ export class UserService {
   }
 
   createUser(user: Object): Observable<Object> {
-    return this.http.post(`${this.API_URL}`, user);
+    const httpOptions2 = {
+      headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
+    };
+    return this.http.post(`${this.API_URL}`, user, httpOptions2);
   }
 
   updateUser(id: number, value: any): Observable<Object> {
