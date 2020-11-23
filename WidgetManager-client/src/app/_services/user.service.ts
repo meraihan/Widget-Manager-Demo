@@ -32,7 +32,10 @@ export class UserService {
   }
 
   getUser(id: number): Observable<any> {
-    return this.http.get(`${this.API_URL}/${id}`);
+    const httpOptions2 = {
+      headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
+    };
+    return this.http.get(`${this.API_URL}${id}`, httpOptions2);
   }
 
   createUser(user: Object): Observable<Object> {
@@ -43,7 +46,7 @@ export class UserService {
     const httpOptions2 = {
       headers: new HttpHeaders({ Authorization: 'Bearer ' + this.authService.getToken()})
     };
-    return this.http.put(`${this.API_URL}/${id}`, value);
+    return this.http.put(`${this.API_URL}/${id}`, httpOptions2);
   }
 
   deleteUser(id: number): Observable<any> {

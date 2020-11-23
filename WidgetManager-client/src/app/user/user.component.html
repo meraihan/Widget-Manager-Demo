@@ -1,6 +1,24 @@
 <div class="container">
     <header class="jumbotron">
-      <p>{{ content }}</p>
+     <table class="table table-responsive table-striped">
+       <thead>
+        <tr>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>action</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr>
+         <td> {{content.username}}</td>
+         <td> {{content.email}}</td>
+         <td> {{content.roles[0].roleName}}</td>
+         <td>
+         <button type="button" class="btn btn-info" style="margin-left: 10px" data-toggle="modal" data-target="#exampleModalCenter">Details</button>
+       </td>
+       </tr>
+       </tbody>
+     </table>
     </header>
   </div>
-  

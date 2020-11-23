@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import {User} from '../users';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,18 +9,25 @@ import { UserService } from '../_services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  content = '';
-  constructor(private userService: UserService) { }
+  content: User;
+  constructor(private userService: UserService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    // this.userService.getUser().subscribe(
-    //   data => {
-    //     this.content = data;
-    //   },
-    //   err => {
-    //     this.content = JSON.parse(err.error).message;
-    //   }
-    // );
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(
+      param => this.getUser(param.id)
+    );
   }
+  getUser(id): void {
+    this.userService.getUser(id).subscribe(
+      data => {
+        this.content = data;
+      },
+      err => {
+        this.content = JSON.parse(err.error).message;
+      }
+    );
+  }
+
+
 
 }
