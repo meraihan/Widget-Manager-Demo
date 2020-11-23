@@ -15,7 +15,7 @@
          <td> {{content.email}}</td>
          <td> {{content.roles[0].roleName}}</td>
          <td>
-         <button type="button" class="btn btn-info" style="margin-left: 10px" data-toggle="modal" data-target="#exampleModalCenter">Details</button>
+         <button type="button" class="btn btn-info" (click)="goToDetail(content.id)">Details</button>
        </td>
        </tr>
        </tbody>

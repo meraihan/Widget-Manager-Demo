@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class UserComponent implements OnInit {
   content: User;
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, private route: ActivatedRoute, private  routher: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(
@@ -29,5 +29,7 @@ export class UserComponent implements OnInit {
   }
 
 
-
+  goToDetail(id: number): void {
+    this.routher.navigate(['detail'], { queryParams: { id } });
+  }
 }

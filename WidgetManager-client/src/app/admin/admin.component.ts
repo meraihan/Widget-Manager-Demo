@@ -35,5 +35,8 @@ export class AdminComponent implements OnInit {
   userDetails(id: number){
     this.router.navigate(['details', id]);
   }
+  goToDetail(id: number): void {
+    this.router.navigate(['detail'], { queryParams: { id } });
+  }
 
 }

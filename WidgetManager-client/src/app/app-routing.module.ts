@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { AuthorComponent } from './author/author.component';
 import { AdminComponent } from './admin/admin.component';
+import {DetailComponent} from './detail/detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'author', component: AuthorComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'detail', component: DetailComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
