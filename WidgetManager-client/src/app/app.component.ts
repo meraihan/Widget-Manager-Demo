@@ -9,8 +9,9 @@ import { TokenStorageService } from './_services/token-storage.service';
 export class AppComponent implements OnInit {
   private roles: string[];
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
+  showAdmin = false;
+  showAuthor = false;
+  showUser = false;
   username: string;
 
   constructor(public tokenStorageService: TokenStorageService) { }
@@ -22,8 +23,9 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_USER');
+      this.showAdmin = this.roles.includes('ROLE_ADMIN');
+      this.showAuthor = this.roles.includes('ROLE_AUTHOR');
+      this.showUser = this.roles.includes('ROLE_USER');
 
       this.username = user.username;
     }

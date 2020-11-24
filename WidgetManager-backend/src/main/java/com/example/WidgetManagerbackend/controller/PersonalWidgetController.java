@@ -34,7 +34,7 @@ public class PersonalWidgetController {
         return ResponseEntity.ok().body(personalWidget);
     }
 
-    @PostMapping("/personalWdgt/")
+    @PostMapping("/personalWdgt")
     public PersonalWidget createPersonalWidget(@Valid @RequestBody PersonalWidget personalWidget) {
         return personalWidgetRepository.saveAndFlush(personalWidget);
     }

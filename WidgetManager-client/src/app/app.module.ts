@@ -15,6 +15,9 @@ import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { DetailComponent } from './detail/detail.component';
+import { PersonalWidgetCreateComponent } from './personal-widget-create/personal-widget-create.component';
+import { PersonalWidgetUpdateComponent } from './personal-widget-update/personal-widget-update.component';
+import { PersonalWidgetListComponent } from './personal-widget-list/personal-widget-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { DetailComponent } from './detail/detail.component';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    DetailComponent
+    DetailComponent,
+    PersonalWidgetCreateComponent,
+    PersonalWidgetUpdateComponent,
+    PersonalWidgetListComponent
   ],
   imports: [
     BrowserModule,

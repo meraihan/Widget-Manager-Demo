@@ -5,14 +5,14 @@
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li>
-      <li class="nav-item" >
-        <a href="/admin" class="nav-link" routerLink="admin">Admin</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/author" class="nav-link" routerLink="author">Author</a>
-      </li>
       <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a href="/admin" class="nav-link" routerLink="admin">Public Widget</a>
+      </li>
+      <li class="nav-item" *ngIf="showUser">
+        <a href="/author" class="nav-link" routerLink="author">Role Widget</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdmin">
+        <a href="/personal-widget-list" (click)="goToPersonalWidgetList()" class="nav-link" routerLink="personal-widget-list">Personal Widget</a>
       </li>
     </ul>
 

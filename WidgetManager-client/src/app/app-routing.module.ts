@@ -8,6 +8,9 @@ import { UserComponent } from './user/user.component';
 import { AuthorComponent } from './author/author.component';
 import { AdminComponent } from './admin/admin.component';
 import {DetailComponent} from './detail/detail.component';
+import {PersonalWidgetListComponent} from './personal-widget-list/personal-widget-list.component';
+import {PersonalWidgetUpdateComponent} from './personal-widget-update/personal-widget-update.component';
+import {PersonalWidgetCreateComponent} from './personal-widget-create/personal-widget-create.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'author', component: AuthorComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'detail', component: DetailComponent },
+  { path: 'personal-widget-list', component: PersonalWidgetListComponent },
+  {path: 'update-personal-widget/:id', component: PersonalWidgetUpdateComponent},
+  {path: 'create-personal-widget', component: PersonalWidgetCreateComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -25,4 +31,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { } 
