@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Create User </h3>
+
+    <button (click) = "createPersonalWidget()" class="btn btn-success">Add</button>
+    <button (click)="goToPersonalWidgetList()" class="btn btn-info" style="margin-left: 5px" >List</button>
+
+    <br><br>
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label> ID</label>
+            <input type="text" class ="form-control" id = "id"
+                [(ngModel)] = "personalWidget.id" name = "id">
+        </div>
+    
+        <div class="form-group">
+            <label> Name</label>
+            <input type="text" class ="form-control" id = "name"
+                [(ngModel)] = "personalWidget.name" name = "name">
+        </div>
+    
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

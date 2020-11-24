@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>User List</h2>
+    </div>
+
+    <button (click) = "createPersonalWidget()"  class="btn btn-success">Add</button>
+    <button (click) = "getPersonalWidget()" class="btn btn-info" style="margin-left: 5px" >List</button>
+
+    <br><br>
+    <div class="panel-body">
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th> ID</th>
+                    <th> Name </th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let personal of personalWidget" >
+                    <td> {{ personal.id }} </td>
+                    <td> {{ personal.name }} </td>
+                    <td>
+                        <button (click) = "updatePersonalWidget(personal.id)" class = "btn btn-info"> Update</button>
+                        <button (click) = "deletePersonalWidget(personal.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>
